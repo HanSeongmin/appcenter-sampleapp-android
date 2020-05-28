@@ -3,6 +3,7 @@ package ms.appcenter.sampleapp.android;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.net.Uri;
+import android.util.Log;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -16,6 +17,7 @@ public class MyDistributeListener implements DistributeListener {
     @Override
     public boolean onReleaseAvailable(Activity activity, ReleaseDetails releaseDetails) {
 
+        Log.d("AA", "AA : 3");
         // Look at releaseDetails public methods to get version information, release notes text or release notes URL
         String versionName = releaseDetails.getShortVersion();
         int versionCode = releaseDetails.getVersion();

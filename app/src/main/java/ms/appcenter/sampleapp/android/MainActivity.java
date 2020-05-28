@@ -15,6 +15,7 @@ import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
 import com.microsoft.appcenter.distribute.Distribute;
+import com.microsoft.appcenter.distribute.UpdateTrack;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,10 +38,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_root);
 
+//        Distribute.setUpdateTrack(UpdateTrack.PUBLIC);
         Distribute.setListener(new MyDistributeListener());
         // Initialize SDK
         if (!BuildConfig.APPCENTER_APP_SECRET.equals("")) {
             // Use APPCENTER_APP_SECRET environment variable if it exists
+            Log.d("AA", "AA 1");
+            Log.d("AA", "AA 2 : " + Distribute.isEnabled().toString());
             AppCenter.start(getApplication(), BuildConfig.APPCENTER_APP_SECRET,
                     Analytics.class, Crashes.class, Distribute.class);
         } else {
