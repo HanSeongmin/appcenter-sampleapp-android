@@ -11,7 +11,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // Obtain the value of APPCENTER_APP_SECRET environment variable from Build time.
-        buildConfigField("String", "APPCENTER_APP_SECRET", "\"\"")
+        buildConfigField("String", "APPCENTER_APP_SECRET", "\"64a7fc33-9118-4112-8da9-6cb5528c397f\"")
         if (System.getenv("APPCENTER_APP_SECRET") != null) {
             buildConfigField("String", "APPCENTER_APP_SECRET", "\"${System.getenv("APPCENTER_APP_SECRET")}\"")
         }
@@ -33,7 +33,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
 
-    def appCenterSdkVersion = '2.5.1'
+    def appCenterSdkVersion = '3.2.1'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
